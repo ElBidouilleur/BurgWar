@@ -23,12 +23,12 @@ end
 add_requireconfs("fmt", "stackwalker", { debug = is_mode("debug", "asan") })
 add_requireconfs("libcurl")
 
-set_allowedmodes("asan", "debug", "releasedbg")
+set_allowedmodes("asan", "release", "debug", "releasedbg")
 set_allowedplats("windows", "mingw", "linux", "macosx")
 set_allowedarchs("windows|x64", "mingw|x86_64", "linux|x86_64", "macosx|x86_64")
 set_defaultmode("debug")
 
-add_rules("mode.asan", "mode.debug", "mode.releasedbg")
+add_rules("mode.asan", "mode.release", "mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
 add_headerfiles("thirdparty/natvis/**.natvis")
